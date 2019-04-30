@@ -1,0 +1,25 @@
+<div class="jumbotron jumbotron-fluid" style="background-color:transparent !important;">
+  <div class="container">
+    <h1 class="display-4">유튜브 링크를 삽입해주세요.</h1>
+
+    <form [formGroup]="linkForm" (ngSubmit)="onSubmit()">
+      <div class="input-group mt-3 mb-3">
+        <input type="text" class="form-control form-control-lg" placeholder="링크!" aria-label="Recipient's username"
+          formControlName="link" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button [disabled]="linkForm.errors" class="btn btn-outline-secondary" type="submit">완료</button>
+        </div>
+      </div>
+    </form>
+
+
+
+    <ul class="list-group mb-3" *ngFor="let item of links let i = index">
+      <li class="list-group-item">{{item.linkName}}</li>
+    </ul>
+
+    <button type="button" (click)="complite()" class="btn btn-info mt-3 btn-lg btn-block">공유하기 ! </button>
+
+
+  </div>
+</div>
