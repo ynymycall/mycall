@@ -1,22 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CompliteComponent } from './complite/complite.component';
+import { SharelinkComponent } from './sharelink/sharelink.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CompliteComponent
+    CompliteComponent,
+    SharelinkComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -36,6 +36,6 @@ export class HomeComponent implements OnInit {
   }
 
   complite() {
-    this.router.navigate(['/complite/D14dasAS24A']);
+    this.router.navigate(['/complite']);
   }
 }

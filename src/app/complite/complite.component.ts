@@ -12,9 +12,9 @@ export class CompliteComponent implements OnInit {
   constructor(private route: ActivatedRoute, private listService: ListService) { }
 
   ngOnInit() {
-    this.url = this.route.snapshot.paramMap.get("p");
+    this.url = "D14dasAS24A";
     this.links = this.listService.list;
-    console.log(`this.url : ${this.url}`);
+    console.log('this.listService.list', this.listService.list);
   }
 
 }
