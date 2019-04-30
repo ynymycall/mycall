@@ -2,21 +2,30 @@
   <div class="container">
     <h1 class="display-4">유튜브 링크를 삽입해주세요.</h1>
 
+
     <form [formGroup]="linkForm" (ngSubmit)="onSubmit()">
-      <div class="input-group mt-3 mb-3">
-        <input type="text" class="form-control form-control-lg" placeholder="링크!" aria-label="Recipient's username"
-          formControlName="link" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button [disabled]="linkForm.errors" class="btn btn-outline-secondary" type="submit">완료</button>
-        </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">제목</label>
+        <input type="text" formControlName="title" class="form-control form-control-lg" placeholder="제목">
       </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1"> 유튜브 링크</label>
+        <input type="text" formControlName="link" class="form-control" id="exampleInputEmail1" placeholder="링크">
+      </div>
+
+      <button type="submit" class="btn btn-secondary float-right mb-3">저장</button>
+
+
+      <ul class="list-group mb-3" *ngFor="let item of links let i = index" style="clear: both;">
+        <li class="list-group-item">
+          <p>제목 : {{item.title}}</p>
+          <p>링크 : {{item.link}}</p>
+        </li>
+      </ul>
+
     </form>
 
 
-
-    <ul class="list-group mb-3" *ngFor="let item of links let i = index">
-      <li class="list-group-item">{{item.linkName}}</li>
-    </ul>
 
     <button type="button" (click)="complite()" class="btn btn-info mt-3 btn-lg btn-block">공유하기 ! </button>
 
