@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  get f() { return this.linkForm.controls; }
+
   onSubmit() {
     this.submitted = true;
 
@@ -33,6 +35,9 @@ export class HomeComponent implements OnInit {
     };
     this.listService.list.push(obj);
     this.links = this.listService.list;
+
+    this.linkForm.get('link').setValue(null);
+    this.linkForm.get('title').setValue(null);
   }
 
   complite() {
